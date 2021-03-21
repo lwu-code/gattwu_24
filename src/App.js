@@ -1,6 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
-
+import Poker from "./components/poker"
 function App() {
   return (
     <div className="App">
@@ -15,6 +15,7 @@ function App() {
           target="_blank"
           rel="noopener noreferrer"
         >
+          <Poker />
           Hello Garrett and Friends
         </a>
       </header>
