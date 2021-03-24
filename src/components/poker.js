@@ -1,6 +1,7 @@
 import React from "react"
 import Card2C from "../images/cards/2C.png"
-
+import ReactDOM from 'react-dom';
+import Button from '@material-ui/core/Button';
 
 
 class Poker extends React.Component {
@@ -49,7 +50,13 @@ class Poker extends React.Component {
         {/* <h1>Hello {this.props.dataFromParent} </h1> */}
         <h1>Hello {this.state.card1} </h1>
         <p>I am in a React Component!</p>
-        <img src={Card2C}  />
+        <Button variant="contained" color="primary">
+      Garrett
+    </Button>
+        <img src={(`./images/cards/2C.png`)}  />
+        {/* <img src={Card2C}  /> */}
+        
+
       </div>
     )
   }
