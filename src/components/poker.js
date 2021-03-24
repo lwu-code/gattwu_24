@@ -249,7 +249,7 @@ class Poker extends React.Component {
   render()
   {
     return (
-      <ImageList sx={{ width: 500, height: 450 }} cols={4} rowHeight={164}>
+      <ImageList width={1} sx={{ width: 500, height: 450 }} cols={4} rowHeight={164}>
         {itemData.map((item) => (
           <ImageListItem key={item.img}>
             <img
