@@ -208,28 +208,17 @@ function preCards(value, index, array) {
 console.log("newData = ", newData)
 const itemData = [
   {
-    // img: 'https://images.unsplash.com/photo-1551963831-b3b1ca40c98e',
-    
-     //img:Card2H,
-    //img:img1,
     img:newData[0],
-
-    // title: 'Breakfast',
   },
   {
     img:newData[2],
-    // title: 'Burger',
   },
   {
     img:newData[4],
-    // title: 'Camera',
   },
   {
     img:newData[6],
-    // title: 'Coffee',
   },
-
-
 
 ];
 
@@ -237,11 +226,6 @@ class Poker extends React.Component {
 
   constructor(props) {
     super(props);
-
-
-
-
-
 
   };
 
