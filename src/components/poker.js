@@ -201,7 +201,7 @@ function preCards(value, index, array) {
       // code block
   }
 
-  newData.push(value)
+
 } 
 
 
@@ -211,13 +211,13 @@ const itemData = [
     img:newData[0],
   },
   {
+    img:newData[1],
+  },
+  {
     img:newData[2],
   },
   {
-    img:newData[4],
-  },
-  {
-    img:newData[6],
+    img:newData[3],
   },
 
 ];
