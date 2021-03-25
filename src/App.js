@@ -35,7 +35,6 @@ class App extends React.Component {
             Hello Garrett and Friends 2
 
         </header>
-        <img src={'/images/cards/2C.png'}  />
       </div>
     );
   }
