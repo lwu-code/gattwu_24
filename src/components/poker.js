@@ -249,7 +249,9 @@ class Poker extends React.Component {
   render()
   {
     return (
-      <ImageList width={1} sx={{ width: 500, height: 450 }} cols={4} rowHeight={164}>
+      // <ImageList width={1} sx={{ width: 500, height: 450 }} cols={4} rowHeight={164}>
+
+        <ImageList width="68%"  sx={{ width: 400, height: 350 }} cols={4} rowHeight={120}>
         {itemData.map((item) => (
           <ImageListItem key={item.img}>
             <img
@@ -260,7 +262,9 @@ class Poker extends React.Component {
             />
           </ImageListItem>
         ))}
-      </ImageList>
+      </ImageList> 
+
+
     );
   }
   // render() {
