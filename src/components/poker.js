@@ -45,7 +45,20 @@ import ImageList from '@material-ui/core/ImageList'
 import ImageListItem from '@material-ui/core/ImageListItem';
 import requirePropFactory from '@material-ui/utils/requirePropFactory';
 
-var types = ["C", "D", "H", "S"]
+
+
+class Poker extends React.Component {
+
+  constructor(props) {
+    super(props);
+
+  };
+
+
+  render()
+  {
+    console.log("this.prop.card = ", this.props.card)
+    var types = ["C", "D", "H", "S"]
 
 var n1 = Math.floor((Math.random() * 10) + 1);
 var t1 = types[Math.floor(Math.random()*types.length)];
@@ -205,37 +218,26 @@ function preCards(value, index, array) {
 } 
 
 
-console.log("newData = ", newData)
+// console.log("newData = ", newData)
 const itemData = [
   {
     img:newData[0],
   },
-  {
-    img:newData[1],
-  },
-  {
-    img:newData[2],
-  },
-  {
-    img:newData[3],
-  },
+  // {
+  //   img:newData[1],
+  // },
+  // {
+  //   img:newData[2],
+  // },
+  // {
+  //   img:newData[3],
+  // },
 
 ];
-
-class Poker extends React.Component {
-
-  constructor(props) {
-    super(props);
-
-  };
-
-
-  render()
-  {
     return (
       // <ImageList width={1} sx={{ width: 500, height: 450 }} cols={4} rowHeight={164}>
-
-        <ImageList width="68%"  sx={{ width: 400, height: 350 }} cols={4} rowHeight={120}>
+    // <img src={newData[0]}/>
+        <ImageList width="68%"  sx={{ width: 100, height: 350 }} cols={1} rowHeight={120}>
         {itemData.map((item) => (
           <ImageListItem key={item.img}>
             <img
