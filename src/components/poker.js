@@ -58,38 +58,14 @@ class Poker extends React.Component {
   render()
   {
     console.log("this.prop.card = ", this.props.card)
-    var types = ["C", "D", "H", "S"]
 
-var n1 = Math.floor((Math.random() * 10) + 1);
-var t1 = types[Math.floor(Math.random()*types.length)];
-var c1 = n1.toString() + t1
-
-// console.log("n1 = ", n1)
-// console.log("t1 = ", t1)
-// console.log("c1 = ", c1)
-var n2 = Math.floor((Math.random() * 10) + 1);
-var t2 = types[Math.floor(Math.random()*types.length)];
-var c2 = n2.toString() + t2
-
-var n3 = Math.floor((Math.random() * 10) + 1);
-var t3 = types[Math.floor(Math.random()*types.length)];
-var c3 = n3.toString() + t3
-
-var n4 = Math.floor((Math.random() * 10) + 1);
-var t4 = types[Math.floor(Math.random()*types.length)];
-var c4 = n4.toString() + t4
-
-var img1 = Card2H
-
-var cards = [c1, c2, c3, c4]
-
-var newData = []
+    var newData = []
 
 
-cards.forEach(preCards);
-function preCards(value, index, array) {
 
-  switch(value) {
+
+
+  switch(this.props.card) {
     case "1C":
       newData.push(Card1C)
       break;
@@ -215,7 +191,7 @@ function preCards(value, index, array) {
   }
 
 
-} 
+
 
 
 // console.log("newData = ", newData)

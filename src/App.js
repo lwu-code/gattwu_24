@@ -47,6 +47,21 @@ class App extends React.Component {
     var c1 = n1.toString() + t1
     console.log("app.js c1 = ", c1)
 
+    var n2 = Math.floor((Math.random() * 10) + 1);
+    var t2 = types[Math.floor(Math.random()*types.length)];
+    var c2 = n2.toString() + t2
+    console.log("app.js c2 = ", c2)
+
+    var n3 = Math.floor((Math.random() * 10) + 1);
+    var t3 = types[Math.floor(Math.random()*types.length)];
+    var c3 = n3.toString() + t3
+    console.log("app.js c3 = ", c3)
+
+    var n4 = Math.floor((Math.random() * 10) + 1);
+    var t4 = types[Math.floor(Math.random()*types.length)];
+    var c4 = n4.toString() + t4
+    console.log("app.js c4 = ", c4)
+
     return (
 
       <div className="App">
@@ -60,7 +75,7 @@ class App extends React.Component {
   variant="quilted"
   cols={4}
 >
-          <Poker card={c1} /><Poker /><Poker /><Poker />
+          <Poker card={c1} /><Poker card={c2}/><Poker card={c3}/><Poker card={c4}/>
 
         </ImageList>
           {/* <Grid container alignItems="center" justify="right" spacing={0}> */}
