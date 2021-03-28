@@ -22,11 +22,23 @@ const useStyles = makeStyles((theme) => ({
 class App extends React.Component {
   constructor(props) {
     super();
+    this.score_1 = 0;
+    this.score_2 = 0;
 
     this.state = {};
   }
   refresh = () => {
     this.setState({});
+  };
+
+  GarrettScore = () => {
+    this.score_1 += 1;
+    this.refresh();
+  };
+
+  FriendScore = () => {
+    this.score_2 += 1;
+    this.refresh();
   };
 
   render() {
@@ -62,8 +74,10 @@ class App extends React.Component {
               <Poker card={c3} />
               <Poker card={c4} />
             </ImageList>
-            <ProgressBar player={"Garrett"} />
-            <ProgressBar player={"friend"} />
+            <button onClick={this.GarrettScore}> Garrett Scores </button>
+            <ProgressBar player={"Garrett"} score={this.score_1} />
+            <button onClick={this.FriendScore}> Friend Scores </button>
+            <ProgressBar player={"friend"} score={this.score_2} />
             <button onClick={this.refresh}> Reload </button>
           </header>
         </div>
