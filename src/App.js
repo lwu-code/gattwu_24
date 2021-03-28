@@ -1,84 +1,38 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import "./App.css";
-import Poker from "./components/poker";
+import Cards from "./components/cards";
 import ProgressBar from "./components/progressbar";
-import Grid from "@material-ui/core/Grid";
-import ImageList from "@material-ui/core/ImageList";
-import EditableLabel from "react-inline-editing";
-const useStyles = makeStyles((theme) => ({
-  root: {
-    flexGrow: 1,
-  },
-  paper: {
-    height: 140,
-    width: 100,
-  },
-  control: {
-    padding: theme.spacing(2),
-  },
-}));
+// import { Cards } from "./components/cards";
 
 class App extends React.Component {
-  constructor(props) {
-    super();
-    this.score_1 = 0;
-    this.score_2 = 0;
-
-    this.state = {};
-  }
   refresh = () => {
     this.setState({});
   };
 
   GarrettScore = () => {
     this.score_1 += 1;
-    this.refresh();
+    // this.refresh();
   };
 
   FriendScore = () => {
     this.score_2 += 1;
-    this.refresh();
+    // this.refresh();
   };
 
   render() {
-    var types = ["C", "D", "H", "S"];
-    var n1 = Math.floor(Math.random() * 10 + 1);
-    var t1 = types[Math.floor(Math.random() * types.length)];
-    var c1 = n1.toString() + t1;
-    console.log("app.js c1 = ", c1);
-
-    var n2 = Math.floor(Math.random() * 10 + 1);
-    var t2 = types[Math.floor(Math.random() * types.length)];
-    var c2 = n2.toString() + t2;
-    console.log("app.js c2 = ", c2);
-
-    var n3 = Math.floor(Math.random() * 10 + 1);
-    var t3 = types[Math.floor(Math.random() * types.length)];
-    var c3 = n3.toString() + t3;
-    console.log("app.js c3 = ", c3);
-
-    var n4 = Math.floor(Math.random() * 10 + 1);
-    var t4 = types[Math.floor(Math.random() * types.length)];
-    var c4 = n4.toString() + t4;
-    console.log("app.js c4 = ", c4);
-
     return (
       <div className="App">
         <div>
           <header className="App-header">
-            <p>Hello Garrett and Friends 2</p>
-            <ImageList variant="quilted" cols={4}>
-              <Poker card={c1} />
-              <Poker card={c2} />
-              <Poker card={c3} />
-              <Poker card={c4} />
-            </ImageList>
-            <button onClick={this.GarrettScore}> Garrett Scores </button>
-            <ProgressBar player={"Garrett"} score={this.score_1} />
-            <button onClick={this.FriendScore}> Friend Scores </button>
-            <ProgressBar player={"friend"} score={this.score_2} />
-            <button onClick={this.refresh}> Reload </button>
+            {/* <p>Hello Garrett and Friends</p> */}
+            {/* <button onClick={this.GarrettScore}> Garrett Scores </button> */}
+            <ProgressBar player={"Garrett"} score={0} />
+            {/* <button onClick={this.FriendScore}> Friend Scores </button> */}
+            <ProgressBar player={"friend"} score={0} />
+            {/* <button onClick={this.refresh}> Reload </button> */}
+
+            <Cards />
           </header>
         </div>
       </div>
