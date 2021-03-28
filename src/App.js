@@ -2,8 +2,10 @@ import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import "./App.css";
 import Poker from "./components/poker";
+import ProgressBar from "./components/progressbar";
 import Grid from "@material-ui/core/Grid";
 import ImageList from "@material-ui/core/ImageList";
+import EditableLabel from "react-inline-editing";
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
@@ -20,12 +22,10 @@ const useStyles = makeStyles((theme) => ({
 class App extends React.Component {
   constructor(props) {
     super();
-    // Don't call this.setState() here!
+
     this.state = {};
-    // this.handleClick = this.handleClick.bind(this);
   }
   refresh = () => {
-    // re-renders the component
     this.setState({});
   };
 
@@ -53,17 +53,20 @@ class App extends React.Component {
 
     return (
       <div className="App">
-        <header className="App-header">
-          <p>Hello Garrett and Friends</p>
-          <ImageList variant="quilted" cols={4}>
-            <Poker card={c1} />
-            <Poker card={c2} />
-            <Poker card={c3} />
-            <Poker card={c4} />
-          </ImageList>
-
-          <button onClick={this.refresh}> Reload </button>
-        </header>
+        <div>
+          <header className="App-header">
+            <p>Hello Garrett and Friends 2</p>
+            <ImageList variant="quilted" cols={4}>
+              <Poker card={c1} />
+              <Poker card={c2} />
+              <Poker card={c3} />
+              <Poker card={c4} />
+            </ImageList>
+            <ProgressBar player={"Garrett"} />
+            <ProgressBar player={"friend"} />
+            <button onClick={this.refresh}> Reload </button>
+          </header>
+        </div>
       </div>
     );
   }
