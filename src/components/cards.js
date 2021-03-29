@@ -153,7 +153,7 @@ class Cards extends React.Component {
     resData.forEach(myFunction);
 
     function myFunction(value, index, array) {
-      toolTipData = toolTipData + "<b>" + value + "</b>";
+      toolTipData = toolTipData + "<div>" + value + "</br>" + "</div>";
       // toolTipData = toolTipData + value;
     }
     console.log("type of resData = ", typeof resData);
@@ -174,7 +174,7 @@ class Cards extends React.Component {
             </ImageList>
             {/* <button onClick={this.GarrettScore}> Garrett Scores </button> */}
             {/* <button onClick={this.FriendScore}> Friend Scores </button> */}
-            <button onClick={this.refresh}> Next </button>
+            <Button onClick={this.refresh}> Next </Button>
             <HtmlTooltip
               title={
                 <React.Fragment>

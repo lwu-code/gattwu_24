@@ -2,7 +2,9 @@ import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import "./App.css";
 import Cards from "./components/cards";
+
 import ProgressBar from "./components/progressbar";
+
 // import { Cards } from "./components/cards";
 
 class App extends React.Component {
