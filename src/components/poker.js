@@ -51,7 +51,7 @@ class Poker extends React.Component {
   }
 
   render() {
-    console.log("this.prop.card = ", this.props.card);
+    // console.log("this.prop.card = ", this.props.card);
 
     var newData = [];
 

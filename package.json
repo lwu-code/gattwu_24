@@ -14,6 +14,7 @@
     "react-dom": "^17.0.2",
     "react-inline-editing": "^1.0.10",
     "react-scripts": "4.0.3",
+    "react-show-more-text": "^1.4.6",
     "web-vitals": "^1.1.1"
   },
   "scripts": {

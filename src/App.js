@@ -25,12 +25,8 @@ class App extends React.Component {
       <div className="App">
         <div>
           <header className="App-header">
-            {/* <p>Hello Garrett and Friends</p> */}
-            {/* <button onClick={this.GarrettScore}> Garrett Scores </button> */}
-            <ProgressBar player={"Garrett"} score={0} />
-            {/* <button onClick={this.FriendScore}> Friend Scores </button> */}
-            <ProgressBar player={"friend"} score={0} />
-            {/* <button onClick={this.refresh}> Reload </button> */}
+            {/* <ProgressBar player={"Garrett"} score={0} />
+            <ProgressBar player={"friend"} score={0} /> */}
 
             <Cards />
           </header>

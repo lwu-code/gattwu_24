@@ -1,12 +1,16 @@
 import React from "react";
-import { makeStyles } from "@material-ui/core/styles";
+import { withStyles, makeStyles } from "@material-ui/core/styles";
+
 import "../App.css";
 
 import Poker from "./poker";
-// import ProgressBar from "./components/progressbar";
-// import Grid from "@material-ui/core/Grid";
+
 import ImageList from "@material-ui/core/ImageList";
-// import EditableLabel from "react-inline-editing";
+import Button from "@material-ui/core/Button";
+import Tooltip from "@material-ui/core/Tooltip";
+import Typography from "@material-ui/core/Typography";
+import ClickAwayListener from "@material-ui/core/ClickAwayListener";
+import Fab from "@material-ui/core/Fab";
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
@@ -71,22 +75,35 @@ var solveFourIntegers = function (A, target) {
   });
 };
 
+const HtmlTooltip = withStyles((theme) => ({
+  tooltip: {
+    backgroundColor: "#f5f5f9",
+    color: "rgba(0, 0, 0, 0.87)",
+    maxWidth: 220,
+    fontSize: theme.typography.pxToRem(12),
+    border: "1px solid #dadde9",
+  },
+}))(Tooltip);
+
 class Cards extends React.Component {
   constructor(props) {
+    console.log("constructor called");
     super();
     this.score_1 = 0;
     this.score_2 = 0;
 
-    this.state = {};
+    this.state = { showAnswer: false };
   }
   refresh = () => {
     this.setState({});
   };
 
   showAnswer = () => {
-    console.log("showAnswer called ");
-    var checkRes = solveFourIntegers([6, 6, 6, 6], 24);
-    console.log("checkRes = ", checkRes);
+    // console.log("showAnswer called ");
+    this.state.showAnswer = true;
+    console.log("this.state.showAnswer = ", this.state.showAnswer);
+    // var checkRes = solveFourIntegers([6, 6, 6, 6], 24);
+    // console.log("showAnswer checkRes = ", checkRes);
   };
 
   GarrettScore = () => {
@@ -100,33 +117,46 @@ class Cards extends React.Component {
   };
 
   render() {
+    console.log("render called");
     var types = ["C", "D", "H", "S"];
     var n1 = Math.floor(Math.random() * 10 + 1);
     var t1 = types[Math.floor(Math.random() * types.length)];
     var c1 = n1.toString() + t1;
-    console.log("app.js c1 = ", c1);
+    // console.log("app.js c1 = ", c1);
 
     var n2 = Math.floor(Math.random() * 10 + 1);
     var t2 = types[Math.floor(Math.random() * types.length)];
     var c2 = n2.toString() + t2;
-    console.log("app.js c2 = ", c2);
+    // console.log("app.js c2 = ", c2);
 
     var n3 = Math.floor(Math.random() * 10 + 1);
     var t3 = types[Math.floor(Math.random() * types.length)];
     var c3 = n3.toString() + t3;
-    console.log("app.js c3 = ", c3);
+    // console.log("app.js c3 = ", c3);
 
     var n4 = Math.floor(Math.random() * 10 + 1);
     var t4 = types[Math.floor(Math.random() * types.length)];
     var c4 = n4.toString() + t4;
-    console.log("app.js c4 = ", c4);
+    // console.log("app.js c4 = ", c4);
 
     var checkRes = solveFourIntegers([n1, n2, n3, n4], 24);
     checkRes = JSON.stringify(checkRes);
     checkRes = checkRes.replaceAll("[", "");
     checkRes = checkRes.replaceAll("]", "");
     checkRes = checkRes.replaceAll('"', "\n");
-    console.log("checkRes = ", checkRes);
+    console.log("type of checkRes = ", typeof checkRes);
+    var resData = checkRes.split(",");
+    console.log("resData = ", resData);
+    console.log("type of resData = ", typeof resData);
+
+    var toolTipData = "";
+    resData.forEach(myFunction);
+
+    function myFunction(value, index, array) {
+      toolTipData = toolTipData + "<b>" + value + "</b>";
+      // toolTipData = toolTipData + value;
+    }
+    console.log("type of resData = ", typeof resData);
 
     if (checkRes.length == 0) {
       this.refresh();
@@ -143,12 +173,21 @@ class Cards extends React.Component {
               <Poker card={c4} />
             </ImageList>
             {/* <button onClick={this.GarrettScore}> Garrett Scores </button> */}
-
             {/* <button onClick={this.FriendScore}> Friend Scores </button> */}
-
             <button onClick={this.refresh}> Next </button>
-            <button onClick={this.showAnswer}>Check Answer</button>
-            <p>{checkRes}</p>
+            <HtmlTooltip
+              title={
+                <React.Fragment>
+                  <Typography color="inherit">Tooltip with HTML</Typography>
+                  <Typography>{toolTipData}</Typography>
+                  {/* <em>{resData}</em> */}
+                  <b>{"some"}</b> <u>{"amazing content"}</u>.{" "}
+                  {"It's very engaging. Right?"}
+                </React.Fragment>
+              }
+            >
+              <Button>Hover on me to see answers</Button>
+            </HtmlTooltip>
             {/* <Text onPress={this.updateText}>abc</Text> */}
           </header>
         </div>
