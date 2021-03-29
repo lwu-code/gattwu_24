@@ -20,6 +20,57 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
+var decompose = function (A, B, s) {
+  if (!A.length) {
+    B.push(s);
+    return;
+  }
+  if (!s.length) {
+    s += A[0];
+    return decompose(A.slice(1), B, s);
+  }
+  for (var i = 0; i < A.length; i++) {
+    decompose(
+      A.slice(0, i).concat(A.slice(i + 1, A.length)),
+      B,
+      "(" + s + " + " + A[i] + ")"
+    );
+    decompose(
+      A.slice(0, i).concat(A.slice(i + 1, A.length)),
+      B,
+      "(" + s + " * " + A[i] + ")"
+    );
+    decompose(
+      A.slice(0, i).concat(A.slice(i + 1, A.length)),
+      B,
+      "(" + s + " - " + A[i] + ")"
+    );
+    decompose(
+      A.slice(0, i).concat(A.slice(i + 1, A.length)),
+      B,
+      "(" + A[i] + " - " + s + ")"
+    );
+    decompose(
+      A.slice(0, i).concat(A.slice(i + 1, A.length)),
+      B,
+      "(" + s + " / " + A[i] + ")"
+    );
+    decompose(
+      A.slice(0, i).concat(A.slice(i + 1, A.length)),
+      B,
+      "(" + A[i] + " / " + s + ")"
+    );
+  }
+};
+
+var solveFourIntegers = function (A, target) {
+  var B = [];
+  decompose(A.slice(), B, "");
+  return B.filter(function (exp) {
+    return eval(exp) === target;
+  });
+};
+
 class Cards extends React.Component {
   constructor(props) {
     super();
@@ -30,6 +81,12 @@ class Cards extends React.Component {
   }
   refresh = () => {
     this.setState({});
+  };
+
+  showAnswer = () => {
+    console.log("showAnswer called ");
+    var checkRes = solveFourIntegers([6, 6, 6, 6], 24);
+    console.log("checkRes = ", checkRes);
   };
 
   GarrettScore = () => {
@@ -64,6 +121,17 @@ class Cards extends React.Component {
     var c4 = n4.toString() + t4;
     console.log("app.js c4 = ", c4);
 
+    var checkRes = solveFourIntegers([n1, n2, n3, n4], 24);
+    checkRes = JSON.stringify(checkRes);
+    checkRes = checkRes.replaceAll("[", "");
+    checkRes = checkRes.replaceAll("]", "");
+    checkRes = checkRes.replaceAll('"', "\n");
+    console.log("checkRes = ", checkRes);
+
+    if (checkRes.length == 0) {
+      this.refresh();
+    }
+
     return (
       <div className="App">
         <div>
@@ -79,6 +147,9 @@ class Cards extends React.Component {
             {/* <button onClick={this.FriendScore}> Friend Scores </button> */}
 
             <button onClick={this.refresh}> Next </button>
+            <button onClick={this.showAnswer}>Check Answer</button>
+            <p>{checkRes}</p>
+            {/* <Text onPress={this.updateText}>abc</Text> */}
           </header>
         </div>
       </div>
