@@ -149,11 +149,10 @@ class Cards extends React.Component {
     console.log("resData = ", resData);
     console.log("type of resData = ", typeof resData);
 
-    var toolTipData = "";
     resData.forEach(myFunction);
 
     function myFunction(value, index, array) {
-      toolTipData = toolTipData + "<div>" + value + "</br>" + "</div>";
+      // toolTipData = toolTipData + "<div>" + value + "</br>" + "</div>";
       // toolTipData = toolTipData + value;
     }
     console.log("type of resData = ", typeof resData);
@@ -161,6 +160,10 @@ class Cards extends React.Component {
     if (checkRes.length == 0) {
       this.refresh();
     }
+
+    const items = resData.map(function (item) {
+      return <Typography> {item} </Typography>;
+    });
 
     return (
       <div className="App">
@@ -181,7 +184,9 @@ class Cards extends React.Component {
                   <Typography color="inherit">
                     Did you find the right answer?
                   </Typography>
-                  <Typography>{toolTipData}</Typography>
+                  {/* <Typography>{toolTipData}</Typography> */}
+                  {items}
+                  {/* <Typography>{toolTipData}</Typography> */}
                   {/* <em>{resData}</em> */}
                   <b>{"some"}</b> <u>{"amazing content"}</u>.{" "}
                   {"It's very engaging. Right?"}
