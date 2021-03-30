@@ -89,31 +89,11 @@ class Cards extends React.Component {
   constructor(props) {
     console.log("constructor called");
     super();
-    this.score_1 = 0;
-    this.score_2 = 0;
 
     this.state = { showAnswer: false };
   }
   refresh = () => {
     this.setState({});
-  };
-
-  showAnswer = () => {
-    // console.log("showAnswer called ");
-    this.state.showAnswer = true;
-    console.log("this.state.showAnswer = ", this.state.showAnswer);
-    // var checkRes = solveFourIntegers([6, 6, 6, 6], 24);
-    // console.log("showAnswer checkRes = ", checkRes);
-  };
-
-  GarrettScore = () => {
-    this.score_1 += 1;
-    // this.refresh();
-  };
-
-  FriendScore = () => {
-    this.score_2 += 1;
-    // this.refresh();
   };
 
   render() {
