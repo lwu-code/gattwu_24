@@ -1,6 +1,7 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import LinearProgress from "@material-ui/core/LinearProgress";
+import Rating from "@material-ui/lab/Rating";
 import Button from "@material-ui/core/Button";
 
 import purple from "@material-ui/core/colors/purple";
@@ -40,50 +41,30 @@ class ProgressBar extends React.Component {
     if (this.props.player == "Garrett") {
       var whichColor = "primary";
     }
-    console.log("whichColor = ", whichColor);
+    console.log("this.state.score = ", this.state.score);
 
     return (
       <div>
         {/* <p>{this.props.player} onclick="playerScored()" </p> */}
-        <button onClick={this.playerScored}>
+        <Button color="info" onClick={this.playerScored}>
           {" "}
           {this.props.player} Scores{" "}
-        </button>
-        <LinearProgress
+        </Button>
+        <Rating
+          name="disabled"
+          value={this.state.score}
+          max={10}
+
+          // readOnly
+        />
+        {/* <LinearProgress
           variant="buffer"
           color={whichColor}
           value={this.state.score * 10}
           valueBuffer={this.state.score * 10 + 10}
-        />
+        /> */}
       </div>
     );
   }
 }
 export default ProgressBar;
-
-// export default function ProgressBar() {
-//   const classes = useStyles();
-//   const [progress, setProgress] = React.useState(0);
-//   const [buffer, setBuffer] = React.useState(10);
-
-//   const progressRef = React.useRef(() => {});
-//   React.useEffect(() => {
-//     progressRef.current = () => {
-//       if (progress > 100) {
-//         setProgress(0);
-//         setBuffer(10);
-//       } else {
-//         const diff = Math.random() * 10;
-//         const diff2 = Math.random() * 10;
-//         setProgress(progress + diff);
-//         setBuffer(progress + diff + diff2);
-//       }
-//     };
-//   });
-
-//   return (
-//     <div className={classes.root}>
-//       <LinearProgress variant="buffer" value={progress} valueBuffer={buffer} />
-//     </div>
-//   );
-// }

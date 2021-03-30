@@ -27,6 +27,7 @@ class App extends React.Component {
       <div className="App">
         <div>
           <header className="App-header">
+            <ProgressBar player={"Garrett"} score={0} />
             {/* <ProgressBar player={"Garrett"} score={0} />
             <ProgressBar player={"friend"} score={0} /> */}
 
