@@ -55,8 +55,8 @@ class ProgressBar extends React.Component {
             value={this.state.score}
             max={10}
             color="info"
-            fontSize="small"
-            icon={<ThumbUpAltIcon />}
+            size="small"
+            icon={<ThumbUpAltIcon fontSize="small" />}
           />
         </div>
       );
@@ -73,8 +73,8 @@ class ProgressBar extends React.Component {
             value={this.state.score}
             max={10}
             color="info"
-            fontSize="small"
-            icon={<FavoriteIcon />}
+            size="small"
+            icon={<FavoriteIcon fontSize="small" />}
           />
         </div>
       );
