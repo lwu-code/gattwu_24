@@ -56,7 +56,9 @@ class ProgressBar extends React.Component {
       whichColor = "primary";
       return (
         <div>
-          {/* <p>{this.props.player} onclick="playerScored()" </p> */}
+          <Typography m={2} color="primary">
+            Hello Garrett and Friends
+          </Typography>
           <Button color={"primary"} onClick={this.playerScored}>
             {" "}
             {this.props.player}{" "}

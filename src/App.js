@@ -22,9 +22,6 @@ class App extends React.Component {
   handleCallback = (childData) => {
     // this.setState({data: childData})
     console.log("App.js handleCallback called, childData = ", childData);
-    if (childData >= 10) {
-      this.setState({});
-    }
   };
 
   render() {
