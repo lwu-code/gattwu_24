@@ -60,9 +60,6 @@ class ProgressBar extends React.Component {
           color="info"
           fontSize="small"
           icon={<ThumbUpAltIcon />}
-
-          // icon={<FavoriteIcon />}
-          // readOnly
         />
         {/* <LinearProgress
           variant="buffer"
