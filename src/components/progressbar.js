@@ -46,7 +46,7 @@ class ProgressBar extends React.Component {
     return (
       <div>
         {/* <p>{this.props.player} onclick="playerScored()" </p> */}
-        <Button color="info" onClick={this.playerScored}>
+        <Button color={whichColor} onClick={this.playerScored}>
           {" "}
           {this.props.player} Scores{" "}
         </Button>
