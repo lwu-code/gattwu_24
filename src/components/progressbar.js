@@ -3,7 +3,8 @@ import { makeStyles } from "@material-ui/core/styles";
 import LinearProgress from "@material-ui/core/LinearProgress";
 import Rating from "@material-ui/lab/Rating";
 import Button from "@material-ui/core/Button";
-
+import FavoriteIcon from "@material-ui/icons/Favorite";
+import ThumbUpAltIcon from "@material-ui/icons/ThumbUpAlt";
 import purple from "@material-ui/core/colors/purple";
 
 const useStyles = makeStyles({
@@ -38,8 +39,10 @@ class ProgressBar extends React.Component {
     console.log("this.prop.score = ", this.props.score);
     // var color = ""
     var whichColor = "secondary";
+    var whichIcon = FavoriteIcon;
     if (this.props.player == "Garrett") {
-      var whichColor = "primary";
+      whichColor = "primary";
+      whichIcon = ThumbUpAltIcon;
     }
     console.log("this.state.score = ", this.state.score);
 
@@ -54,7 +57,11 @@ class ProgressBar extends React.Component {
           name="disabled"
           value={this.state.score}
           max={10}
+          color="info"
+          fontSize="small"
+          icon={<ThumbUpAltIcon />}
 
+          // icon={<FavoriteIcon />}
           // readOnly
         />
         {/* <LinearProgress
