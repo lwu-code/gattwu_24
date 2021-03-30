@@ -175,8 +175,6 @@ class Cards extends React.Component {
               <Poker card={c3} />
               <Poker card={c4} />
             </ImageList>
-            {/* <button onClick={this.GarrettScore}> Garrett Scores </button> */}
-            {/* <button onClick={this.FriendScore}> Friend Scores </button> */}
             <Button color="success" onClick={this.refresh}>
               {" "}
               Next{" "}

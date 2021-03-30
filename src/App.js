@@ -22,15 +22,30 @@ class App extends React.Component {
     // this.refresh();
   };
 
+  handleCallback = (childData) => {
+    // this.setState({data: childData})
+    console.log("App.js handleCallback called, childData = ", childData);
+    if (childData >= 10) {
+      this.score_1 = 0;
+      this.score_2 = 0;
+    }
+  };
+
   render() {
     return (
       <div className="App">
         <div>
           <header className="App-header">
-            <ProgressBar player={"Garrett"} score={0} />
-            <ProgressBar player={"Friend"} score={0} />
-            {/* <ProgressBar player={"Garrett"} score={0} />
-            <ProgressBar player={"friend"} score={0} /> */}
+            <ProgressBar
+              player={"Garrett"}
+              score={0}
+              parentCallback={this.handleCallback}
+            />
+            <ProgressBar
+              player={"Friend"}
+              score={0}
+              parentCallback={this.handleCallback}
+            />
             <Cards />
           </header>
         </div>
