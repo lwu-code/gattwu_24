@@ -177,7 +177,10 @@ class Cards extends React.Component {
             </ImageList>
             {/* <button onClick={this.GarrettScore}> Garrett Scores </button> */}
             {/* <button onClick={this.FriendScore}> Friend Scores </button> */}
-            <Button onClick={this.refresh}> Next </Button>
+            <Button color="success" onClick={this.refresh}>
+              {" "}
+              Next{" "}
+            </Button>
             <HtmlTooltip
               title={
                 <React.Fragment>
