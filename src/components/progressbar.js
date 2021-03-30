@@ -20,8 +20,8 @@ class ProgressBar extends React.Component {
     this.state = {
       score: this.props.score,
     };
-
-    console.log("this.state.score = ", this.state.score);
+    this.state.score = this.props.score;
+    console.log("1 this.state.score = ", this.state.score);
   }
 
   playerScored = () => {
@@ -29,7 +29,11 @@ class ProgressBar extends React.Component {
 
     this.state.score += 1;
 
-    console.log("this.state.score = ", this.state.score);
+    if (this.state.score > 10) {
+      this.state.score -= 10;
+    }
+
+    console.log("2 this.state.score = ", this.state.score);
     this.props.parentCallback(this.state.score);
 
     this.setState({});

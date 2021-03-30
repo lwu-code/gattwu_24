@@ -117,7 +117,7 @@ class Cards extends React.Component {
   };
 
   render() {
-    console.log("render called");
+    console.log("cards.js render called");
     var types = ["C", "D", "H", "S"];
     var n1 = Math.floor(Math.random() * 10 + 1);
     var t1 = types[Math.floor(Math.random() * types.length)];

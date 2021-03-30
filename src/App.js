@@ -32,6 +32,7 @@ class App extends React.Component {
   };
 
   render() {
+    console.log("App.js render called");
     return (
       <div className="App">
         <div>
