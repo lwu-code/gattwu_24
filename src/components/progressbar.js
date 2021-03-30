@@ -6,6 +6,7 @@ import Button from "@material-ui/core/Button";
 import FavoriteIcon from "@material-ui/icons/Favorite";
 import ThumbUpAltIcon from "@material-ui/icons/ThumbUpAlt";
 import purple from "@material-ui/core/colors/purple";
+import Typography from "@material-ui/core/Typography";
 
 const useStyles = makeStyles({
   root: {
@@ -16,11 +17,15 @@ const useStyles = makeStyles({
 class ProgressBar extends React.Component {
   constructor(props) {
     super(props);
-    console.log("this.props.score = ", this.props.score);
+    console.log(
+      "ProgressBar constructor this.props.score = ",
+      this.props.score
+    );
     this.state = {
       score: this.props.score,
     };
     this.state.score = this.props.score;
+    this.state.totalScore = this.props.score;
     console.log("1 this.state.score = ", this.state.score);
   }
 
@@ -28,6 +33,7 @@ class ProgressBar extends React.Component {
     // this.refresh();
 
     this.state.score += 1;
+    this.state.totalScore += 1;
 
     if (this.state.score > 10) {
       this.state.score -= 10;
@@ -40,9 +46,9 @@ class ProgressBar extends React.Component {
   };
 
   render() {
-    console.log("this.prop.player = ", this.props.player);
-    console.log("this.prop.score = ", this.props.score);
-    console.log("this.state.score = ", this.state.score);
+    console.log("progressbar.js render this.prop.player = ", this.props.player);
+    console.log("progressbar.js render this.prop.score = ", this.props.score);
+    console.log("progressbar.js render this.state.score = ", this.state.score);
     // var color = ""
     var whichColor = "secondary";
     var whichIcon = FavoriteIcon;
@@ -53,8 +59,13 @@ class ProgressBar extends React.Component {
           {/* <p>{this.props.player} onclick="playerScored()" </p> */}
           <Button color={"primary"} onClick={this.playerScored}>
             {" "}
-            {this.props.player} Scores{" "}
+            {this.props.player}{" "}
           </Button>
+
+          <Typography style={{ display: "inline" }} m={2} color="primary">
+            {this.state.totalScore}
+          </Typography>
+
           <Rating
             readOnly
             value={this.state.score}
@@ -70,8 +81,12 @@ class ProgressBar extends React.Component {
           {/* <p>{this.props.player} onclick="playerScored()" </p> */}
           <Button color={"primary"} onClick={this.playerScored}>
             {" "}
-            {this.props.player} Scores{" "}
+            {this.props.player}{" "}
           </Button>
+          <Typography style={{ display: "inline" }} m={2} color="primary">
+            {" "}
+            {this.state.totalScore}
+          </Typography>
           <Rating
             readOnly
             value={this.state.score}

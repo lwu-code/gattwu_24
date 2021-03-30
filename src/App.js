@@ -8,26 +8,22 @@ import ProgressBar from "./components/progressbar";
 // import { Cards } from "./components/cards";
 
 class App extends React.Component {
+  constructor(props) {
+    console.log("App.js constructor called");
+    super();
+
+    this.state = {};
+  }
+
   refresh = () => {
     this.setState({});
-  };
-
-  GarrettScore = () => {
-    this.score_1 += 1;
-    // this.refresh();
-  };
-
-  FriendScore = () => {
-    this.score_2 += 1;
-    // this.refresh();
   };
 
   handleCallback = (childData) => {
     // this.setState({data: childData})
     console.log("App.js handleCallback called, childData = ", childData);
     if (childData >= 10) {
-      this.score_1 = 0;
-      this.score_2 = 0;
+      this.setState({});
     }
   };
 
