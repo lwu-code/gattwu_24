@@ -37,38 +37,48 @@ class ProgressBar extends React.Component {
   render() {
     console.log("this.prop.player = ", this.props.player);
     console.log("this.prop.score = ", this.props.score);
+    console.log("this.state.score = ", this.state.score);
     // var color = ""
     var whichColor = "secondary";
     var whichIcon = FavoriteIcon;
     if (this.props.player == "Garrett") {
       whichColor = "primary";
-      whichIcon = ThumbUpAltIcon;
+      return (
+        <div>
+          {/* <p>{this.props.player} onclick="playerScored()" </p> */}
+          <Button color={"primary"} onClick={this.playerScored}>
+            {" "}
+            {this.props.player} Scores{" "}
+          </Button>
+          <Rating
+            name="disabled"
+            value={this.state.score}
+            max={10}
+            color="info"
+            fontSize="small"
+            icon={<ThumbUpAltIcon />}
+          />
+        </div>
+      );
+    } else {
+      return (
+        <div>
+          {/* <p>{this.props.player} onclick="playerScored()" </p> */}
+          <Button color={"primary"} onClick={this.playerScored}>
+            {" "}
+            {this.props.player} Scores{" "}
+          </Button>
+          <Rating
+            name="disabled"
+            value={this.state.score}
+            max={10}
+            color="info"
+            fontSize="small"
+            icon={<FavoriteIcon />}
+          />
+        </div>
+      );
     }
-    console.log("this.state.score = ", this.state.score);
-
-    return (
-      <div>
-        {/* <p>{this.props.player} onclick="playerScored()" </p> */}
-        <Button color={"primary"} onClick={this.playerScored}>
-          {" "}
-          {this.props.player} Scores{" "}
-        </Button>
-        <Rating
-          name="disabled"
-          value={this.state.score}
-          max={10}
-          color="info"
-          fontSize="small"
-          icon={<ThumbUpAltIcon />}
-        />
-        {/* <LinearProgress
-          variant="buffer"
-          color={whichColor}
-          value={this.state.score * 10}
-          valueBuffer={this.state.score * 10 + 10}
-        /> */}
-      </div>
-    );
   }
 }
 export default ProgressBar;
