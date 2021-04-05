@@ -64,9 +64,7 @@ export default function ScrollableTabsButtonAuto() {
           onChange={handleChange}
           indicatorColor="primary"
           textColor="primary"
-          variant="scrollable"
-          scrollButtons="auto"
-          aria-label="scrollable auto tabs example"
+          centered
         >
           <Tab label="Card Game 24" {...a11yProps(0)} />
           <Tab label="Item Two" {...a11yProps(1)} />

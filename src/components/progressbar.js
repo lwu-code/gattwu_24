@@ -57,7 +57,8 @@ class ProgressBar extends React.Component {
       return (
         <div>
           <Typography m={2} color="primary">
-            Hello Garrett and Friends
+            Hello Garrett and friends, can you use the following cards and +-*/
+            to get 24?
           </Typography>
           <Button color={"primary"} onClick={this.playerScored}>
             {" "}
