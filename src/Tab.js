@@ -7,6 +7,7 @@ import Tab from "@material-ui/core/Tab";
 import Typography from "@material-ui/core/Typography";
 import Box from "@material-ui/core/Box";
 import Game24 from "./components/Game24";
+import AI from "./components/AI";
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -70,6 +71,7 @@ export default function ScrollableTabsButtonAuto() {
         >
           <Tab label="Card Game 24" {...a11yProps(0)} />
           <Tab label="RPG Game" {...a11yProps(1)} />
+          {/* <Tab label="AI" {...a11yProps(2)} /> */}
           {/* <Tab label="Item Three" {...a11yProps(2)} />
           <Tab label="Item Four" {...a11yProps(3)} />
           <Tab label="Item Five" {...a11yProps(4)} />
@@ -86,7 +88,7 @@ export default function ScrollableTabsButtonAuto() {
         </Typography>
       </TabPanel>
       <TabPanel value={value} index={2}>
-        Item Three
+        <AI />
       </TabPanel>
       <TabPanel value={value} index={3}>
         Item Four
