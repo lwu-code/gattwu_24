@@ -122,16 +122,6 @@ function AI() {
     setTimeout(() => predictionFunction(), 500);
   }
 
-  // useEffect(() => {
-  //   //prevent initial triggering
-  //   if (mounted.current) {
-  //     predictionFunction();
-
-  //   } else {
-  //     mounted.current = true;
-  //   }
-  // }, [start]);
-
   const videoConstraints = {
     height: 1080,
     width: 1920,
