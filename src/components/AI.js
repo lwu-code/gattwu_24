@@ -62,8 +62,8 @@ function AI() {
 
   async function predictionFunction() {
     const predictions = await model.detect(document.getElementById("img"));
-    // setVideoHeight(webcamRef.current.video.videoHeight);
-    // setVideoWidth(webcamRef.current.video.videoWidth);
+    setVideoHeight(webcamRef.current.video.videoHeight);
+    setVideoWidth(webcamRef.current.video.videoWidth);
     var cnvs = document.getElementById("myCanvas");
 
     // cnvs.style.position = "absolute";
@@ -141,7 +141,7 @@ function AI() {
 
   return (
     <div className="App">
-      <div style={{ position: "absolute", top: "400px", zIndex: "9999" }}>
+      <div style={{ position: "absolute", top: "100px", zIndex: "9999" }}>
         <canvas
           id="myCanvas"
           width={videoWidth}
