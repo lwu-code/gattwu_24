@@ -22,6 +22,10 @@ import Webcam from "react-webcam";
 // import { createWorker, createScheduler } from "tesseract.js";
 // import * as cvstfjs from '@microsoft/customvision-tfjs';
 
+var video_width = "50%";
+var video_height = "50%";
+var top_distance = "10px";
+
 function AI() {
   const useStyles = makeStyles((theme) => ({
     root: {
@@ -38,8 +42,8 @@ function AI() {
 
   const webcamRef = React.useRef(null);
 
-  const [videoWidth, setVideoWidth] = useState(960);
-  const [videoHeight, setVideoHeight] = useState(640);
+  const [videoWidth, setVideoWidth] = useState(video_width);
+  const [videoHeight, setVideoHeight] = useState(video_height);
 
   const [model, setModel] = useState();
 
@@ -123,15 +127,15 @@ function AI() {
   }
 
   const videoConstraints = {
-    height: 1080,
-    width: 1920,
+    height: video_height,
+    width: video_width,
     maxWidth: "100vw",
     facingMode: "environment",
   };
 
   return (
     <div className="App">
-      <div style={{ position: "absolute", top: "100px", zIndex: "9999" }}>
+      <div style={{ position: "absolute", top: top_distance, zIndex: "9999" }}>
         <canvas
           id="myCanvas"
           width={videoWidth}
