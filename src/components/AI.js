@@ -141,14 +141,6 @@ function AI() {
 
   return (
     <div className="App">
-      <Button
-        onClick={() => {
-          predictionFunction();
-        }}
-      >
-        Start to Detect
-      </Button>
-
       <div style={{ position: "absolute", top: "400px", zIndex: "9999" }}>
         <canvas
           id="myCanvas"
@@ -157,17 +149,24 @@ function AI() {
           style={{ backgroundColor: "transparent" }}
         />
       </div>
-      <div style={{ position: "absolute", top: "400px" }}>
-        <Webcam
-          audio={false}
-          id="img"
-          ref={webcamRef}
-          // width={640}
-          screenshotQuality={1}
-          screenshotFormat="image/jpeg"
-          videoConstraints={videoConstraints}
-        />
-      </div>
+      {/* <div style={{ position: "absolute", top: "400px" }}> */}
+      <Webcam
+        audio={false}
+        id="img"
+        ref={webcamRef}
+        // width={640}
+        screenshotQuality={1}
+        screenshotFormat="image/jpeg"
+        videoConstraints={videoConstraints}
+      />
+      {/* </div> */}
+      <Button
+        onClick={() => {
+          predictionFunction();
+        }}
+      >
+        Start to Detect
+      </Button>
     </div>
   );
 }
