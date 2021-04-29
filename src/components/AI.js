@@ -22,8 +22,8 @@ import Webcam from "react-webcam";
 // import { createWorker, createScheduler } from "tesseract.js";
 // import * as cvstfjs from '@microsoft/customvision-tfjs';
 
-var video_width = "50%";
-var video_height = "50%";
+var video_width = 960;
+var video_height = 640;
 var top_distance = "100px";
 
 function AI() {
