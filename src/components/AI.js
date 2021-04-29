@@ -141,26 +141,16 @@ function AI() {
 
   return (
     <div className="App">
-      <>
-        <Box mt={2} />
-        {
-          <Button
-            variant={"contained"}
-            style={{
-              color: "white",
-              backgroundColor: "blueviolet",
-              width: "50%",
-              maxWidth: "250px",
-            }}
-            onClick={() => {
-              predictionFunction();
-            }}
-          >
-            Start Detect
-          </Button>
-        }
-        <Box mt={2} />{" "}
-      </>
+      {
+        <Button
+          onClick={() => {
+            predictionFunction();
+          }}
+        >
+          Start to Detect
+        </Button>
+      }
+
       <div style={{ position: "absolute", top: "400px", zIndex: "9999" }}>
         <canvas
           id="myCanvas"
