@@ -168,8 +168,6 @@ function AI() {
           videoConstraints={videoConstraints}
         />
       </div>
-
-      <Grid item xs={12} md={12}></Grid>
     </div>
   );
 }
