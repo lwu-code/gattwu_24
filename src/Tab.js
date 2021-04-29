@@ -71,7 +71,7 @@ export default function ScrollableTabsButtonAuto() {
         >
           <Tab label="Card Game 24" {...a11yProps(0)} />
           <Tab label="RPG Game" {...a11yProps(1)} />
-          {/* <Tab label="AI" {...a11yProps(2)} /> */}
+          <Tab label="Webcam detect objects" {...a11yProps(2)} />
           {/* <Tab label="Item Three" {...a11yProps(2)} />
           <Tab label="Item Four" {...a11yProps(3)} />
           <Tab label="Item Five" {...a11yProps(4)} />
