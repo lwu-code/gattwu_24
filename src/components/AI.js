@@ -24,7 +24,7 @@ import Webcam from "react-webcam";
 
 var video_width = "50%";
 var video_height = "50%";
-var top_distance = "10px";
+var top_distance = "100px";
 
 function AI() {
   const useStyles = makeStyles((theme) => ({
