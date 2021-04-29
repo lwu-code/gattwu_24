@@ -141,15 +141,13 @@ function AI() {
 
   return (
     <div className="App">
-      {
-        <Button
-          onClick={() => {
-            predictionFunction();
-          }}
-        >
-          Start to Detect
-        </Button>
-      }
+      <Button
+        onClick={() => {
+          predictionFunction();
+        }}
+      >
+        Start to Detect
+      </Button>
 
       <div style={{ position: "absolute", top: "400px", zIndex: "9999" }}>
         <canvas
