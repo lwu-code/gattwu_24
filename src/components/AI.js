@@ -23,7 +23,7 @@ import Webcam from "react-webcam";
 // import * as cvstfjs from '@microsoft/customvision-tfjs';
 
 var video_width = 960;
-var video_height = 640;
+var video_height = 580;
 var top_distance = "100px";
 
 function AI() {
@@ -144,23 +144,25 @@ function AI() {
         />
       </div>
       {/* <div style={{ position: "absolute", top: "400px" }}> */}
-      <Webcam
-        audio={false}
-        id="img"
-        ref={webcamRef}
-        // width={640}
-        screenshotQuality={1}
-        screenshotFormat="image/jpeg"
-        videoConstraints={videoConstraints}
-      />
-      {/* </div> */}
-      <Button
-        onClick={() => {
-          predictionFunction();
-        }}
-      >
-        Start to Detect
-      </Button>
+      <header className="App-header">
+        <Button
+          onClick={() => {
+            predictionFunction();
+          }}
+        >
+          Start to Detect
+        </Button>
+        <Webcam
+          audio={false}
+          id="img"
+          ref={webcamRef}
+          // width={640}
+          screenshotQuality={1}
+          screenshotFormat="image/jpeg"
+          videoConstraints={videoConstraints}
+        />
+        {/* </div> */}
+      </header>
     </div>
   );
 }
