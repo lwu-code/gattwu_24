@@ -112,7 +112,7 @@ function AI() {
             bboxTop
           );
 
-          ctx.rect(bboxLeft, bboxTop, bboxWidth, bboxHeight);
+          ctx.rect(bboxLeft + 200, bboxTop, bboxWidth, bboxHeight);
           ctx.strokeStyle = "#FF0000";
 
           ctx.lineWidth = 3;
