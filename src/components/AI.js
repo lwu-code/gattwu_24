@@ -90,7 +90,7 @@ function AI() {
           let bboxLeft = predictions[n].bbox[0];
           let bboxTop = predictions[n].bbox[1];
           let bboxWidth = predictions[n].bbox[2];
-          let bboxHeight = predictions[n].bbox[3] - bboxTop;
+          let bboxHeight = predictions[n].bbox[3];
 
           console.log("bboxLeft: " + bboxLeft);
           console.log("bboxTop: " + bboxTop);
