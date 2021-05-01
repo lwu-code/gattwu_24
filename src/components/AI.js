@@ -70,7 +70,7 @@ function AI() {
     setVideoWidth(webcamRef.current.video.videoWidth);
     var cnvs = document.getElementById("myCanvas");
 
-    // cnvs.style.position = "absolute";
+    cnvs.style.position = "absolute";
 
     var ctx = cnvs.getContext("2d");
     ctx.clearRect(
