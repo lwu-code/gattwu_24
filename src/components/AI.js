@@ -145,16 +145,14 @@ function AI() {
       </div>
       {/* <div style={{ position: "absolute", top: "400px" }}> */}
       <header className="App-header">
-        <Typography color="inherit">
-          You must use Google Chrome or a browser that supports webcam streaming{" "}
-        </Typography>
         <Button
           onClick={() => {
             predictionFunction();
           }}
         >
-          Start
+          Click me to start detection
         </Button>
+
         <Webcam
           audio={false}
           id="img"
