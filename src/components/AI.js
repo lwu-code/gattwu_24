@@ -81,24 +81,22 @@ class AI extends React.Component {
 
   render() {
     return (
-      <div className="App">
-        <div>
-          <video
-            className="size"
-            autoPlay
-            playsInline
-            muted
-            ref={this.videoRef}
-            width="600"
-            height="500"
-          />
-          <canvas
-            className="size"
-            ref={this.canvasRef}
-            width="600"
-            height="500"
-          />
-        </div>
+      <div>
+        <video
+          className="size"
+          autoPlay
+          playsInline
+          muted
+          ref={this.videoRef}
+          width="600"
+          height="500"
+        />
+        <canvas
+          className="size"
+          ref={this.canvasRef}
+          width="600"
+          height="500"
+        />
       </div>
     );
   }
