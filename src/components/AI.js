@@ -153,7 +153,7 @@ function AI() {
             predictionFunction();
           }}
         >
-          Click me to start detection
+          Start
         </Button>
         <Webcam
           audio={false}
