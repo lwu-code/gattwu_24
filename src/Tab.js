@@ -8,6 +8,7 @@ import Typography from "@material-ui/core/Typography";
 import Box from "@material-ui/core/Box";
 import Game24 from "./components/Game24";
 import AI from "./components/AI";
+import Text2Html from "./components/text2html"
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -82,10 +83,11 @@ export default function ScrollableTabsButtonAuto() {
       <TabPanel value={value} index={0}>
         <Game24 />
       </TabPanel>
-      <TabPanel value={value} index={1}>
-        <Typography m={2} color="primary">
+      <TabPanel value={value} index={1} color="white">
+        <Text2Html/>
+        {/* <Typography m={2} color="primary">
           Under development, coming soon ...
-        </Typography>
+        </Typography> */}
       </TabPanel>
       <TabPanel value={value} index={2}>
         <AI />
